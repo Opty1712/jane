@@ -4,20 +4,17 @@ export default class SmoothScroller {
 
     constructor () {
         this._menuObj = document.querySelector(".menu");
+        this._menuObjFooter = document.querySelector(".menu-footer");
         this._menuObj.addEventListener ("click", this._initSmoothScroll.bind(this));
+        this._menuObjFooter.addEventListener ("click", this._initSmoothScroll.bind(this));
 
-        this._pageHeightConst = this._pageHeight ();
         this._stepDown = 70;
         this._stepUp = -this._stepDown;
         this._step = this._stepDown;
         this._side = "down";
         this._endOfThePage = 0;
 
-        this._shiftNormal = 250;
-        this._shiftMobile = 100;
-        this._shift = this._shiftNormal;
-        window.addEventListener ("resize", this._changeShift.bind(this));
-        this._changeShift();
+        this._shift = 100;
     }
 
     _smoothScroll (event) {
@@ -73,21 +70,6 @@ export default class SmoothScroller {
             document.body.clientHeight, document.documentElement.clientHeight
         );
         return scrollHeight;
-    }
-
-    _changeShift () {
-        if (window.innerWidth < 1350) {
-            this._shift = this._shiftMobile;
-            /*hardcoding for yndex-maps
-            document.querySelector (".yandex-maps").style.width = window.innerWidth - 80 + "px";
-            */
-        } else {
-            this._shift = this._shiftNormal;
-            /*hardcoding for yndex-maps
-            document.querySelector (".yandex-maps").style.width = "1280px";
-            */
-        }
-
     }
 
 }

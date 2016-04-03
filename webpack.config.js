@@ -32,6 +32,10 @@ module.exports = {
       {
         test:    /\.jade$/,
         loader: "jade"
+      },
+      {
+        test:    /\.(png|jpg|gif)$/,
+        loader: 'url-loader?limit=20000'
       }
     ]
   },
@@ -43,12 +47,10 @@ module.exports = {
   },
 
   plugins: [
-      /* jquery add to the page
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     })
-    */
   ]
 
 };

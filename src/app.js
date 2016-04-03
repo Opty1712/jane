@@ -3,11 +3,8 @@
 require('normalize-css');
 import './style.css';
 
-
-import BackgroundChanger from './bkg';
-var bkgChanger = new BackgroundChanger({
-    "OPTIONS" : OPTIONS
-});
+require('fancybox')($);
+import 'fancybox/dist/css/jquery.fancybox.css';
 
 
 
@@ -23,11 +20,6 @@ var collapseMenu = new CollapseMenu();
 
 
 
-if (location.href.indexOf("#") == -1) {
-    let showObj = document.querySelector("a[name=start]");
-    setTimeout (()=> showObj.scrollIntoView(false), 500);
-}
-
 
 
 
@@ -37,6 +29,8 @@ function openMenu (event) {
     var nav = document.querySelector("nav");
     nav.classList.toggle ("active");
     event.preventDefault();
+
+    scrollToTop ();
 
     hideShowLocker ();
 }
@@ -55,6 +49,11 @@ function hideShowLocker () {
     }
 }
 
+function scrollToTop () {
+    if (window.pageYOffset > 523) return;
+    window.scrollTo ("", 525);
+}
+
 
 
 
@@ -68,3 +67,19 @@ function hideMenu (event) {
 
     hideShowLocker (event.target);
 }
+
+
+
+$(document).ready(function() {
+    let arr = document.querySelectorAll(".content img");
+    for (let i = 0; i < arr.length; i++) {
+        let parentElem = arr[i].parentNode;
+        var newElem = document.createElement('a');
+        newElem.href = arr[i].src.replace("_s", "");
+        newElem.className = "fancybox";
+        newElem.rel = "gallery";
+        newElem.appendChild(arr[i]);
+        parentElem.appendChild (newElem);
+    }
+    $('.fancybox').fancybox();
+});
