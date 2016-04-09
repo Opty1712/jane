@@ -4,9 +4,7 @@ export default class SmoothScroller {
 
     constructor () {
         this._menuObj = document.querySelector(".menu");
-        this._menuObjFooter = document.querySelector(".menu-footer");
         this._menuObj.addEventListener ("click", this._initSmoothScroll.bind(this));
-        this._menuObjFooter.addEventListener ("click", this._initSmoothScroll.bind(this));
 
         this._stepDown = 70;
         this._stepUp = -this._stepDown;

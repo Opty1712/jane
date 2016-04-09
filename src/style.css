@@ -139,6 +139,35 @@ header.collapsed {
     padding-top: 50px;
 }
 
+.portfolio-content-textile img {
+    padding: 23px 58px 23px 0  !important;
+}
+
+.portfolio-content-web div {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    padding-bottom: 20px;
+}
+
+.portfolio-content-web div a:link, .portfolio-content-web div a:visited {
+    color: #666;
+    font-family: Century Gothic;
+    text-decoration: none;
+    font-size: 20px;
+}
+.portfolio-content-web div a:active, .portfolio-content-web div a:hover {
+    color: #000;
+}
+
+.portfolio-content-web {
+    padding-bottom: 40px !important;
+}
+
+.portfolio-content-web img {
+    padding-bottom: 10px  !important;
+}
+
 .content h1 {
     font-family: Century Gothic;
     font-size: 42px;
@@ -198,32 +227,19 @@ nav.collapsed {
     background: url(/pictures/logo_footer.png) no-repeat;
 }
 
-.footer section .portfolio-content {
-    background: #e7e7e7;
-    margin: 0;
-    padding: 50px 0
-}
-
 .footer section {
     margin: 0;
 }
 
-
-.menu-footer {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
+.footer {
+    background: #e7e7e7;
     margin: 0;
-    height: auto;
-}
-
-.menu-footer a:link, .menu-footer a:visited {
+    padding: 50px 0 50px 350px;
     color: #444;
-}
-
-.menu-footer li {
-    padding: 0 20px 0px 20px;
+    font-family: CenturyGothic;
+    font-size: 20px;
+    text-align: left;
+    max-width: 1400px;
 }
 
 #locker.active {
@@ -280,6 +296,11 @@ nav.collapsed {
         z-index: 6;
     }
 
+    .footer {
+        padding: 50px 0;
+        text-align: center;
+    }
+
     #locker {
         position: fixed;
         top: 84px;
@@ -309,14 +330,5 @@ nav.collapsed {
     .content section {
         margin-bottom: 20px;
         margin-top: 0;
-    }
-
-    .menu-footer {
-        display: none;
-    }
-
-    .footer {
-        height:114px;
-        overflow: hidden;
     }
 }

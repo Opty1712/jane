@@ -74,12 +74,13 @@ $(document).ready(function() {
     let arr = document.querySelectorAll(".content img");
     for (let i = 0; i < arr.length; i++) {
         let parentElem = arr[i].parentNode;
-        var newElem = document.createElement('a');
+        let newElem = document.createElement('a');
         newElem.href = arr[i].src.replace("_s", "");
         newElem.className = "fancybox";
         newElem.rel = "gallery";
         newElem.appendChild(arr[i]);
-        parentElem.appendChild (newElem);
+        //parentElem.appendChild (newElem);
+        parentElem.insertBefore(newElem, parentElem.children[0]);
     }
     $('.fancybox').fancybox();
 });
