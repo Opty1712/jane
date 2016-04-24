@@ -79,8 +79,11 @@ $(document).ready(function() {
         newElem.className = "fancybox";
         newElem.rel = "gallery";
         newElem.appendChild(arr[i]);
-        //parentElem.appendChild (newElem);
-        parentElem.insertBefore(newElem, parentElem.children[0]);
+        if (parentElem.className !== "") {
+            parentElem.appendChild (newElem);
+        } else {
+            parentElem.insertBefore(newElem, parentElem.children[0]);
+        }
     }
     $('.fancybox').fancybox();
 });
